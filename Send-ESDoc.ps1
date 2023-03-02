@@ -27,7 +27,7 @@ $resumenInfo = @{
     naranja = [Int64] $SelectDataTable.NARANJA;
     naranja_minutos = [Double] $SelectDataTable.NARANJA_MIN;
     rojo = [Int64] $SelectDataTable.ROJO;
-    rojo_minutos = [Double] $SelectDataTable.ROJOMIN;
+    rojo_minutos = [Double] $SelectDataTable.ROJO_MIN;
     timestamp = Get-Date
 }
 
