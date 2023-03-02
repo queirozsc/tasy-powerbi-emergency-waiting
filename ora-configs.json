@@ -1,0 +1,5 @@
+﻿{
+    "HOST": "172.18.14.45",
+    "PORT": "1521",
+    "SERVICE_NAME": "dbprod"
+}
