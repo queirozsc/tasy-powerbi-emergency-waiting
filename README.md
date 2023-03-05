@@ -1,5 +1,36 @@
 # tasy-powerbi-emergency-waiting
- Waiting time for Emergency's patients. Script that query an Oracle database at every 5 minutes and send data to Service Real Time Streaming of Power BI' service
+ Waiting time for Emergency's patients.
+ Script that query an Oracle database at every minute and send data to dashboard monitoring.
+
+ >This code was inspired by Marco Russo's article [Implementing real-time updates in Power BI using push datasets instead of DirectQuery](https://www.sqlbi.com/articles/implementing-real-time-updates-in-power-bi-using-push-datasets-instead-of-directquery/)
+
+## Code Versions
+### Power BI
+To understand several ways to show real time data on Power BI, read [Real-time streaming in Power BI](https://learn.microsoft.com/en-us/power-bi/connect-data/service-real-time-streaming)
+- Streaming dataset  
+For a Power BI streaming dataset, run:
+`emergency-waiting-powerbi-streaming.ps1`
+- Push dataset  
+For a Power BI push dataset, run:
+`emergency-waiting-powerbi-push.ps1`
+
+>In Feb 27, 2023 Microsoft anounced the [retirement of streaming dataflows](https://powerbi.microsoft.com/en-us/blog/announcing-the-retirement-of-streaming-dataflows/)
+
+### Databox
+[Databox](https://databox.com/) is a fancy mobile-first solution to easily create dashboards and datawalls integrated with popular tools.  
+Run:  
+`emergency-waiting-databox.ps1`
+
+### Elastic Stack
+[Elastic Stack](https://www.elastic.co/es/what-is/elk-stack) refers to a stack with a JSON-based search (Elastic) and a user interface to data (Kibana).  
+Run:  
+`emergency-waiting-elasticsearch.ps1`
+
+## Setting up Oracle Client
+This code requires Oracle Instant Client for Windows 64-bit.  
+Download and install at https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html
+
+> On Oracle Setup wizard, select **Run time** setup option
 
 ## Setting up ELK Stack on Docker for Windows
 ### Install Docker Desktop

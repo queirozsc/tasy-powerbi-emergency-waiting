@@ -1,4 +1,12 @@
-﻿#Install-Module -Name Elastic.Console -AllowPrerelease
+﻿### Read ElasticSearch configurations file
+$ConfigsFilePath = "$PSScriptRoot\es-configs.json"
+
+If (-Not (Test-Path $ConfigsFilePath)) {
+    Write-Error -Message "$PSScriptRoot\es-configs.json not found! Exiting..." -ErrorAction Stop
+    Exit 1
+}
+
+$ESConfig = Get-Content -Path $ConfigsFilePath | ConvertFrom-Json
 
 ### Read credentials
 $CredentialsFilePath = "$PSScriptRoot\es-credentials.xml"
@@ -40,4 +48,4 @@ $sEncodedString=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", "Basic $($sEncodedString)")
 
-$response = Invoke-RestMethod 'https://localhost:9200/resumen/_doc' -Method 'POST' -Headers $headers -Body $bodyStr -ContentType "application/json" -SkipCertificateCheck
+$response = Invoke-RestMethod "https://$($ESConfig.HOST):$($ESConfig.PORT)/emergencia_pacientes/_doc" -Method 'POST' -Headers $headers -Body $bodyStr -ContentType "application/json" -SkipCertificateCheck
