@@ -1,9 +1,9 @@
 ﻿
 while ($true) {
-    . ./Connect-Oracle.ps1
-    . ./Run-OracleQuery.ps1
+    . ./Oracle/Connect-Oracle.ps1
+    . ./Oracle/Run-OracleQuery.ps1
 
-    . ./Send-DataDBoxMetrics.ps1
+    . ./Databox/Send-DataDBoxMetrics.ps1
 
     Start-Sleep -Seconds 60
 }

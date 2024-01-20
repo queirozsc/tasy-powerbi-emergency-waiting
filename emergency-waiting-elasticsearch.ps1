@@ -1,13 +1,13 @@
 ﻿
 while ($true) {
-    . ./Connect-Oracle.ps1
-    . ./Run-OracleQuery.ps1
-    . ./Run-OracleQueryTriaje.ps1
-    . ./Run-OracleQueryConsulta.ps1
+    . ./Oracle/Connect-Oracle.ps1
+    . ./Oracle/Run-OracleQuery.ps1
+    . ./Oracle/Run-OracleQueryTriaje.ps1
+    . ./Oracle/Run-OracleQueryConsulta.ps1
 
-    . ./Send-ESDoc.ps1
-    . ./Send-ESDocTriaje.ps1
-    . ./Send-ESDocConsulta.ps1
+    . ./ElasticSearch/Send-ESDoc.ps1
+    . ./ElasticSearch/Send-ESDocTriaje.ps1
+    . ./ElasticSearch/Send-ESDocConsulta.ps1
 
     Start-Sleep -Seconds 60
 }
